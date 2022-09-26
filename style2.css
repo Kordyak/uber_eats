@@ -1,0 +1,92 @@
+/* ----------------------- Main ------------------------------ */
+.main_pict{
+    height: 364px;
+    margin-top: 72px;
+    padding-top: 80px;
+    background-image: url(./img2/Трактир\ Пушкин.png);
+    background-position: center center;
+    background-size: cover;
+}
+.name_store{
+    width: 390px;
+    height: 204px;
+    background-color: white;
+    /* border: red 1px solid; */
+}
+/* ---------------- dishs_label ---------------------------------- */
+.tabs > [type="radio"]{
+    display: none;
+}
+.tabs_labels{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    /* border: red 1px solid; */
+}
+.tabs_labels > label{
+    margin-right: 20px;
+    cursor: pointer;
+    user-select: none;
+    /* transition: 0.15s ease-out; */
+}
+label:active{
+    color: #6bb66a;
+}
+.line{
+    background-color: #e3e3e3;
+    height: 1px;
+}
+/* ------------------------- dishs_cards ------------------------- */
+.dishs_cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+@media (max-width:768px) {
+    .dishs_cards{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----------------- dish_card ------------------------------- */
+.dish_card{
+    display: flex;
+    border: #e3e3e3 1px solid;
+    transition: 1s;
+}
+.dish_desc{
+    width: 100%;
+}
+.dish_card:hover{
+    background-color: #e3e3e3;
+}
+.dish_price::after{
+    content: ' ₽';
+}
+/* -------------------------- Animation --------------------------- */
+.tabs_contents{
+    overflow: hidden;
+}
+.tab_content {
+    display: none;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+#tab_btn_1:checked ~ .tabs_contents #tab_content_1,
+#tab_btn_2:checked ~ .tabs_contents #tab_content_2,
+#tab_btn_3:checked ~ .tabs_contents #tab_content_3,
+#tab_btn_4:checked ~ .tabs_contents #tab_content_4,
+#tab_btn_5:checked ~ .tabs_contents #tab_content_5,
+#tab_btn_6:checked ~ .tabs_contents #tab_content_6 {
+  display: block;
+  animation: trans-from-down 0.4s ease-out
+}
+@keyframes trans-from-down {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
